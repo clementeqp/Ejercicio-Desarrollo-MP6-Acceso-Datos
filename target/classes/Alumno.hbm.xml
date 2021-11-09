@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--Mapeamos la clase Alumno con la tabla alumnos-->
+<hibernate-mapping>
+    <class name="pac.Alumno" table="alumnos">
+        <id name="id" type="long">
+            <column name="idAlumno"/>
+            <generator class="increment"/>
+        </id>
+        <property name="nombre" column="Nombre" type="string"/>
+        <property name="nacionalidad" column="Nacionalidad" type="string"/>
+        <property name="edad" column="Edad" type="integer"/>
+        <property name="sexo" column="Sexo" type="string"/>
+
+        <set name="modulos" table="alumno_modulo" cascade="all">
+            <key>
+                <column name="idAlumno" not-null="false"/>
+            </key>
+            <many-to-many column="IdModulo" class="pac.Modulo"/>
+        </set>
+    </class>
+</hibernate-mapping>
+
+<!--
+Apuntes Acceso a Datos Ilerna DAM
+http://cursohibernate.es/doku.php?id=unidades:03_relaciones:05_muchos_a_muchos_desordenada-->

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--Mapeo de la clase Alumno con la tabla alumnos-->
+<hibernate-mapping>
+    <class name="pac.Profesor" table="profesores">
+        <id name="id" type="long">
+            <column name="idProfesor" />
+            <generator class="increment"/>
+        </id>
+        <property name="nombre" column="nombre" type="string"/>
+        <property name="sexo" column="sexo" type="string"/>
+    </class>
+</hibernate-mapping>
+
+<!--
+DTD obtenido de
+http://hibernate.org/dtd/
+-->
