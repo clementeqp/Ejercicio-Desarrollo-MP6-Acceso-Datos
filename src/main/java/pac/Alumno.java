@@ -79,14 +79,13 @@ public class Alumno {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Alumno{");
-        sb.append("id=").append(id);
-        sb.append(", nombre='").append(nombre).append('\'');
-        sb.append(", nacionalidad='").append(nacionalidad).append('\'');
-        sb.append(", edad=").append(edad);
-        sb.append(", sexo='").append(sexo).append('\'');
-        sb.append(", modulos=").append(modulos);
-        sb.append('}');
+        StringBuilder sb = new StringBuilder(" ");
+        sb.append(" nombre: ").append(nombre);
+        sb.append(", nacionalidad: ").append(nacionalidad);
+        sb.append(", edad: ").append(edad);
+        sb.append(", sexo: ").append(sexo);
+        sb.append(", modulos: ").append(modulos.size());
+
         return sb.toString();
     }
 }

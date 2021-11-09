@@ -43,13 +43,12 @@ public class Modulo {
         this.codigo = codigo;
     }
 
-    //ToString
     @Override
     public String toString() {
-        return "Modulo{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", código='" + codigo + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder(" ");
+        sb.append("nombre: ").append(nombre);
+        sb.append(", codigo: ").append(codigo);
+
+        return sb.toString();
     }
 }

@@ -42,13 +42,12 @@ public class Profesor {
         this.sexo = sexo;
     }
 
-    //ToString
     @Override
     public String toString() {
-        return "Profesor{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", sexo='" + sexo + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder(" ");
+        sb.append("nombre: ").append(nombre);
+        sb.append(", sexo: ").append(sexo);
+
+        return sb.toString();
     }
 }

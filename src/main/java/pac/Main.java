@@ -84,6 +84,8 @@ public class Main {
         session.save(modulo);
         session.getTransaction().commit();
 
+        System.out.println("Insert into modulo," + modulo);
+
     }
 
     /**
@@ -95,6 +97,8 @@ public class Main {
         session.beginTransaction();
         session.save(profesor);
         session.getTransaction().commit();
+
+        System.out.println("Insert into profesor," + profesor);
 
 
     }
@@ -118,6 +122,6 @@ public class Main {
         session.beginTransaction();
         session.save(a);
         session.getTransaction().commit();
-        System.out.println("Insert into alumno, nombre: " + nombre +  ", nacionalidad: " + nacionalidad + ", edad: " + edad + ", sexo: " + sexo + ", modulos: " + modulos.size());
+        System.out.println("Insert into alumno," + a);
     }
 }
