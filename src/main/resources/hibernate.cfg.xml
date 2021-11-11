@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--Comportamiento hibernate con la bd, cada ejecucion de
+        la aplicacion borrara todas las tablas y lo creara todo de nuevo-->
         <property name="hbm2ddl.auto">create</property>
+        <!--Url, puerto y nombre de la Base de datos-->
         <property name="connection.url">jdbc:mysql://127.0.0.1:3306/m06</property>
+        <!--Usuario y contraseña de la Base de datos-->
         <property name="connection.username">ilerna</property>
         <property name="connection.password">Ilerna_1234</property>
+        <!--Para mostrar por consola las consultas SQL que se van haciendo-->
         <property name="show_sql">true</property>
 
+        <!--Definimos los archivos de mapeo  clases / tablas-->
         <mapping resource="Alumno.hbm.xml"/>
         <mapping resource="Profesor.hbm.xml"/>
         <mapping resource="Modulo.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
+
+        <!--
+        Apuntes Acceso a Datos Ilerna DAM
+        http://cursohibernate.es/doku.php?id=unidades:03_relaciones:05_muchos_a_muchos_desordenada-->

@@ -4,16 +4,19 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--Mapeamos la clase Alumno con la tabla alumnos-->
 <hibernate-mapping>
+    <!--Mapeamos el id a idAlumno,lo hacemos autoincrementable , la tabla alumnos-->
     <class name="pac.Alumno" table="alumnos">
         <id name="id" type="long">
             <column name="idAlumno"/>
             <generator class="increment"/>
         </id>
+        <!--Atributos y columnas de la tabla-->
         <property name="nombre" column="Nombre" type="string"/>
         <property name="nacionalidad" column="Nacionalidad" type="string"/>
         <property name="edad" column="Edad" type="integer"/>
         <property name="sexo" column="Sexo" type="string"/>
 
+        <!--Definimos la relacion ManyToMany de alumnos y modulos-->
         <set name="modulos" table="alumno_modulo" cascade="all">
             <key>
                 <column name="idAlumno" not-null="false"/>

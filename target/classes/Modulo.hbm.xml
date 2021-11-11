@@ -13,3 +13,7 @@
         <property name="codigo" column="Codigo" type="string"/>
     </class>
 </hibernate-mapping>
+
+        <!--
+        Apuntes Acceso a Datos Ilerna DAM
+        http://cursohibernate.es/doku.php?id=unidades:03_relaciones:05_muchos_a_muchos_desordenada-->

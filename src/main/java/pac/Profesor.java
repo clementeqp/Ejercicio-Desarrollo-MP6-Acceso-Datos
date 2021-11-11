@@ -42,6 +42,8 @@ public class Profesor {
         this.sexo = sexo;
     }
 
+
+    //toString
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder(" ");

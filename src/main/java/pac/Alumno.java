@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Clase que representa un alumno.
+ * Clase que representara a un alumno.
  * @author Clemente Quintana
  */
 
@@ -24,9 +24,6 @@ public class Alumno {
     //Constructores
     public Alumno(){
     }
-
-    Profesor ppp = new Profesor();
-    Modulo mod = new Modulo();
 
 
     public Alumno(Long id, String nombre, String nacionalidad, int edad, String sexo, Set <Modulo> modulos){
@@ -77,6 +74,8 @@ public class Alumno {
         this.modulos = modulos;
     }
 
+
+    // toString
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(" ");

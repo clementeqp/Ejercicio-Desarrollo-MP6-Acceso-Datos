@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!--Mapeo de la clase Alumno con la tabla alumnos-->
+<!--Mapeo de la clase Profesor con la tabla profesores-->
 <hibernate-mapping>
     <class name="pac.Profesor" table="profesores">
         <id name="id" type="long">
@@ -18,3 +18,7 @@
 DTD obtenido de
 http://hibernate.org/dtd/
 -->
+
+        <!--
+        Apuntes Acceso a Datos Ilerna DAM
+        http://cursohibernate.es/doku.php?id=unidades:03_relaciones:05_muchos_a_muchos_desordenada-->

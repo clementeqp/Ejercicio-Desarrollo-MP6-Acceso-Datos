@@ -12,34 +12,32 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println("**********");
-        // Creación de la sesión
+        System.out.println("Conectando ...");
+        // Creación de la sesión y cargar el fichero de configuracion
         Configuration configuration = new Configuration().configure();
-
         SessionFactory sessionFactory = configuration.buildSessionFactory(new StandardServiceRegistryBuilder().configure().build());
 
-        // Iniciamos la sesión
+        // Abrimos la sesión
         Session session = sessionFactory.openSession();
+        System.out.println("Conexion realizada ....");
 
-        System.out.println("Configuración realizada");
-
-        //Creacion de módulos
+        //Creacion de Modulos
         Modulo prog = new Modulo(null, "Programacion B","M03B");
         Modulo datos = new Modulo(null,"Acceso a Datos","M06");
         Modulo dam = new Modulo(null,"Desarrollo de aplicaciones moviles","M08");
         Modulo procesos = new Modulo(null, "Servicios y procesos","M09");
 
 
-        //Introducimos los modulos en la BD
+        //Introducimos los Modulos en la BD a traves de nuestro metodo insertarModulo
 
         insertarModulo(prog, session);
         insertarModulo(datos, session);
         insertarModulo(dam, session);
         insertarModulo(procesos, session);
 
-        // Creamos el profesor
+        // Creamos el Profesor
         Profesor profe = new Profesor(null,"Alvaro", "Hombre");
-        // Introducimos el profesor en la BD
+        // Introducimos el profesor en la BD a traves de nuestro metodo insertarProfesor
         insertarProfesor(profe, session);
 
         //Asignamos a cada alumno sus modulos
@@ -69,7 +67,7 @@ public class Main {
         insertarAlumno("Marta", "Espaniola", 19,"Mujer", modulosMarta, session);
         insertarAlumno("Carla", "Francesa", 35,"Mujer", modulosCarla, session);
 
-        //Cerramos la sesión
+        //Cerramos la sesión y el Factory
         session.close();
         sessionFactory.close();
     }
