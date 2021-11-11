@@ -61,11 +61,17 @@ public class Main {
         modulosCarla.add(dam);
         modulosCarla.add(procesos);
 
-        //Inserciones de alumnos
-        insertarAlumno("Juan", "Espaniola", 26,"Hombre", modulosJuan, session);
-        insertarAlumno("Pedro", "Andorrana", 21,"Hombre", modulosPedro, session);
-        insertarAlumno("Marta", "Espaniola", 19,"Mujer", modulosMarta, session);
-        insertarAlumno("Carla", "Francesa", 35,"Mujer", modulosCarla, session);
+        //Creacion de Alumnos
+        Alumno juan = new Alumno(null, "Juan", "Espaniola", 26,"Hombre", modulosJuan);
+        Alumno pedro = new Alumno(null, "Pedro", "Andorrana", 21,"Hombre", modulosPedro);
+        Alumno marta = new Alumno(null, "Marta", "Espaniola", 19,"Mujer", modulosMarta);
+        Alumno carla = new Alumno(null, "Carla", "Francesa", 35,"Mujer", modulosCarla);
+
+        //Introducimos los Alumnos en la BD a traves de nuestro metodo insertarAlumno
+        insertarAlumno(juan, session);
+        insertarAlumno(pedro, session);
+        insertarAlumno(marta, session);
+        insertarAlumno(carla, session);
 
         //Cerramos la sesión y el Factory
         session.close();
@@ -103,23 +109,14 @@ public class Main {
 
     /**
      * Metodo para introducir alumnos
-     * @param nombre
-     * @param nacionalidad
-     * @param edad
-     * @param sexo
-     * @param modulos
+     * @param alumno
      * @param session
      */
-    private static void insertarAlumno (String nombre, String nacionalidad, int edad, String sexo, Set<Modulo> modulos , Session session){
-        Alumno a = new Alumno();
-        a.setNombre(nombre);
-        a.setNacionalidad(nacionalidad);
-        a.setEdad(edad);
-        a.setSexo(sexo);
-        a.setModulos(modulos);
+    private static void insertarAlumno (Alumno alumno , Session session){
+
         session.beginTransaction();
-        session.save(a);
+        session.save(alumno);
         session.getTransaction().commit();
-        System.out.println("Insert into alumno," + a);
+        System.out.println("Insert into alumno," + alumno);
     }
 }
