@@ -19,7 +19,7 @@ public class Alumno {
     private int edad;
     private String sexo;
     private Set <Modulo> modulos = new HashSet<>();
-    Modulo modulo;
+
 
     //Constructores
     public Alumno(){

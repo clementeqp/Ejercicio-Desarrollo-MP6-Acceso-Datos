@@ -21,7 +21,7 @@
             <key>
                 <column name="idAlumno" not-null="false"/>
             </key>
-            <many-to-many column="IdModulo" class="pac.Modulo"/>
+            <many-to-many column="idModulo" class="pac.Modulo"/>
         </set>
     </class>
 </hibernate-mapping>
