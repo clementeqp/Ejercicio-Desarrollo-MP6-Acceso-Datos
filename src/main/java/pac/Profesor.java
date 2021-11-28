@@ -1,6 +1,10 @@
 package pac;
 
-public class Profesor {
+
+
+import java.io.Serializable;
+
+public class Profesor implements Serializable {
     //Atributos
     private Long id;
     private String nombre;
@@ -46,10 +50,9 @@ public class Profesor {
     //toString
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(" ");
-        sb.append("nombre: ").append(nombre);
-        sb.append(", sexo: ").append(sexo);
+        String sb = " " + "nombre: " + nombre +
+                ", sexo: " + sexo;
 
-        return sb.toString();
+        return sb;
     }
 }

@@ -1,6 +1,8 @@
 package pac;
 
-public class Modulo {
+import java.io.Serializable;
+
+public class Modulo implements Serializable {
     //Atributos
     private Long id;
     private String nombre;

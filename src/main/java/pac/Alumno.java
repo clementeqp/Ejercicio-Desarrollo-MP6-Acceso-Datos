@@ -2,6 +2,7 @@ package pac;
 
 
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ import java.util.Set;
  */
 
 
-public class Alumno {
+public class Alumno implements Serializable {
     //Atributos
     private Long id;
     private String nombre;
